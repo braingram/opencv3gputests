@@ -21,6 +21,7 @@ cv::Mat b(2048, 2048, CV_32F, cv::Scalar(0.));
 
 
 double time_gpu_upload() {
+    mean_delta_time = 0;
     cv::randu(a, cv::Scalar(0), cv::Scalar(100));
     
     cv::cuda::GpuMat ga(2048, 2048, CV_32F);
@@ -48,6 +49,7 @@ double time_gpu_upload() {
 
 
 double time_gpu_download() {
+    mean_delta_time = 0;
     cv::randu(a, cv::Scalar(0), cv::Scalar(100));
     cv::randu(b, cv::Scalar(0), cv::Scalar(100));
     
@@ -83,6 +85,7 @@ double time_gpu_download() {
 
 
 double time_gpu_multiply() {
+    mean_delta_time = 0;
     cv::randu(a, cv::Scalar(0), cv::Scalar(100));
     cv::randu(b, cv::Scalar(0), cv::Scalar(100));
     
@@ -112,6 +115,7 @@ double time_gpu_multiply() {
 
 
 float time_cpu_multiply() {
+    mean_delta_time = 0;
     cv::randu(a, cv::Scalar(0), cv::Scalar(100));
     cv::randu(b, cv::Scalar(0), cv::Scalar(100));
 
